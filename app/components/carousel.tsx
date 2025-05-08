@@ -80,8 +80,8 @@ export default function Carousel() {
       <AnimatePresence mode="wait">
         <motion.div
           key={animKey}
-          initial={{ y: '100%', opacity: 0 }}
-          animate={{ y: '50%', opacity: 1 }}
+          initial={{ y: '60%', opacity: 0 }}
+          animate={{ y: '110%', opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="absolute w-full z-30 flex justify-center"
@@ -94,8 +94,14 @@ export default function Carousel() {
                 Find out more
               </Button>
 
-              {/* Dots */}
-              <div className="flex justify-center mt-4 space-x-2">
+              
+            </CardContent>
+          </Card>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Dots */}
+      <div className=" abolute right-1/2 top-4">
                 {slides.map((_, idx) => (
                   <div
                     key={idx}
@@ -109,10 +115,6 @@ export default function Carousel() {
                   />
                 ))}
               </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </AnimatePresence>
     </div>
   );
 }

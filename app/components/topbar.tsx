@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image';
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -9,7 +10,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
-import { Menu, X, Facebook, Twitter, Instagram, Search } from 'lucide-react' // 👉 added icon
+import { Menu, X, Facebook, Twitter, Instagram} from 'lucide-react' // 👉 added icon
 
 const TopBar = () => {
   const [fixed, setFixed] = useState(false)
@@ -21,10 +22,10 @@ const TopBar = () => {
       ([entry]) => setFixed(!entry.isIntersecting),
       { threshold: 0 }
     )
-
-    if (sentinelRef.current) observer.observe(sentinelRef.current)
+    const currentSentinel = sentinelRef.current;
+    if (currentSentinel) observer.observe(currentSentinel)
     return () => {
-      if (sentinelRef.current) observer.unobserve(sentinelRef.current)
+      if (currentSentinel) observer.unobserve(currentSentinel)
     }
   }, [])
 
@@ -51,7 +52,7 @@ const TopBar = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo */}
             <div>
-            <img src="images/logo.png" alt="MyLogo" className="h-11 w-15 ml-10" />
+            <Image src="/images/logo.png" alt="MyLogo" className="h-11 w-15 ml-10" width={100} height={60}/>
             </div>
 
           {/* Mobile Menu Toggle */}

@@ -1,6 +1,6 @@
 'use client';
 
-import { Car } from "lucide-react";
+// import { Car } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Carousel from "../components/carousel";

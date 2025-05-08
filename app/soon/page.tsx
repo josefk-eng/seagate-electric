@@ -1,14 +1,16 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Image from 'next/image';
 export default function HomePage() {
     return (
         <main className="relative min-h-screen ">
         {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <Image
             src="/images/image3.png"
             alt="Background"
+            width={600} height={400}
             className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-opacity-40" />
